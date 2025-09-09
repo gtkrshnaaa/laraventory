@@ -1,60 +1,261 @@
 @extends('layouts.admin')
 
 @section('header')
-    <h2 class="text-xl font-semibold leading-tight text-gray-800">Profil Admin</h2>
+    <div class="flex justify-between items-center">
+        <div>
+            <h2 class="text-2xl font-bold bg-gradient-to-r from-ocean-600 to-mint-600 bg-clip-text text-transparent">
+                Profil Admin
+            </h2>
+            <p class="text-sm text-gray-600 mt-1">Kelola informasi profil dan keamanan akun</p>
+        </div>
+        <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-gradient-to-br from-ocean-500 to-mint-500 rounded-xl flex items-center justify-center shadow-lg">
+                <i data-lucide="user" class="w-6 h-6 text-white"></i>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('content')
     <div class="py-6">
-        <div class="mx-auto max-w-3xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <form action="{{ route('admin.profile.update') }}" method="POST" class="space-y-4">
+        <div class="mx-auto max-w-4xl sm:px-6 lg:px-8">
+            <!-- Profile Info Card -->
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl mb-8">
+                <div class="p-8 bg-gradient-to-br from-white/50 to-ocean-50/30">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-ocean-500 to-mint-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Informasi Profil</h3>
+                                <p class="text-sm text-gray-600">Update informasi dasar akun admin</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-2 text-sm text-gray-500">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            <span>Terverifikasi</span>
+                        </div>
+                    </div>
+                    
+                    <form action="{{ route('admin.profile.update') }}" method="POST" class="space-y-6">
                         @csrf
                         @method('PUT')
-                        <div>
-                            <label class="block text-sm text-gray-700 mb-1">Nama</label>
-                            <input type="text" name="name" value="{{ old('name', auth('admin')->user()->name ?? '') }}" class="w-full border rounded px-3 py-2" required>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                    <i data-lucide="user" class="w-4 h-4 text-ocean-600"></i>
+                                    <span>Nama Lengkap</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="text" name="name" value="{{ old('name', auth('admin')->user()->name ?? '') }}" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                           placeholder="Masukkan nama lengkap" required>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                    <i data-lucide="mail" class="w-4 h-4 text-ocean-600"></i>
+                                    <span>Email Address</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="email" name="email" value="{{ old('email', auth('admin')->user()->email ?? '') }}" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                           placeholder="admin@example.com" required>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-sm text-gray-700 mb-1">Email</label>
-                            <input type="email" name="email" value="{{ old('email', auth('admin')->user()->email ?? '') }}" class="w-full border rounded px-3 py-2" required>
+                        
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                <i data-lucide="phone" class="w-4 h-4 text-ocean-600"></i>
+                                <span>Nomor Telepon</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" name="phone" value="{{ old('phone', auth('admin')->user()->phone ?? '') }}" 
+                                       class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                       placeholder="+62 812-3456-7890">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-sm text-gray-700 mb-1">No. HP</label>
-                            <input type="text" name="phone" value="{{ old('phone', auth('admin')->user()->phone ?? '') }}" class="w-full border rounded px-3 py-2">
-                        </div>
-                        <div class="flex justify-end">
-                            <button type="submit" class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700">Simpan Profil</button>
+                        
+                        <div class="flex justify-end pt-4">
+                            <button type="submit" class="group relative overflow-hidden rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-ocean-500/25 hover:shadow-xl hover:scale-105">
+                                <span class="relative z-10 flex items-center space-x-2">
+                                    <i data-lucide="save" class="w-5 h-5"></i>
+                                    <span>Simpan Profil</span>
+                                </span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-mint-500 to-ocean-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg mt-6">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <h3 class="text-base font-medium text-gray-900 mb-4">Ubah Password</h3>
-                    <form action="{{ route('admin.profile.password.update') }}" method="POST" class="space-y-4">
+            <!-- Security Settings Card -->
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl">
+                <div class="p-8 bg-gradient-to-br from-white/50 to-red-50/30">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Keamanan Akun</h3>
+                                <p class="text-sm text-gray-600">Update password untuk menjaga keamanan akun</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-2 text-sm text-red-600">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            <span>Privasi Terjaga</span>
+                        </div>
+                    </div>
+                    
+                    <form action="{{ route('admin.profile.password.update') }}" method="POST" class="space-y-6" x-data="{ showPasswords: false }">
                         @csrf
                         @method('PUT')
-                        <div>
-                            <label class="block text-sm text-gray-700 mb-1">Password Saat Ini</label>
-                            <input type="password" name="current_password" class="w-full border rounded px-3 py-2" required>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm text-gray-700 mb-1">Password Baru</label>
-                                <input type="password" name="password" class="w-full border rounded px-3 py-2" required>
+                        
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                <i data-lucide="key" class="w-4 h-4 text-red-600"></i>
+                                <span>Password Saat Ini</span>
+                            </label>
+                            <div class="relative">
+                                <input :type="showPasswords ? 'text' : 'password'" name="current_password" 
+                                       class="w-full pl-12 pr-12 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                       placeholder="Masukkan password saat ini" required>
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i data-lucide="key" class="w-4 h-4 text-gray-400"></i>
+                                </div>
+                                <button type="button" @click="showPasswords = !showPasswords" class="absolute inset-y-0 right-0 pr-4 flex items-center">
+                                    <i :data-lucide="showPasswords ? 'eye-off' : 'eye'" class="w-4 h-4 text-gray-400 hover:text-gray-600"></i>
+                                </button>
                             </div>
-                            <div>
-                                <label class="block text-sm text-gray-700 mb-1">Konfirmasi Password</label>
-                                <input type="password" name="password_confirmation" class="w-full border rounded px-3 py-2" required>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                    <i data-lucide="lock" class="w-4 h-4 text-red-600"></i>
+                                    <span>Password Baru</span>
+                                </label>
+                                <div class="relative">
+                                    <input :type="showPasswords ? 'text' : 'password'" name="password" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                           placeholder="Password baru" required>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2 text-sm font-semibold text-gray-700">
+                                    <i data-lucide="shield" class="w-4 h-4 text-red-600"></i>
+                                    <span>Konfirmasi Password</span>
+                                </label>
+                                <div class="relative">
+                                    <input :type="showPasswords ? 'text' : 'password'" name="password_confirmation" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                           placeholder="Konfirmasi password" required>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="shield" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex justify-end">
-                            <button type="submit" class="px-4 py-2 rounded bg-yellow-600 text-white hover:bg-yellow-700">Ubah Password</button>
+                        
+                        <!-- Password Requirements -->
+                        <div class="bg-yellow-50/80 backdrop-blur-sm border border-yellow-200/50 rounded-xl p-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0">
+                                    <i data-lucide="info" class="w-5 h-5 text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-yellow-800 mb-2">Persyaratan Password:</h4>
+                                    <ul class="text-xs text-yellow-700 space-y-1">
+                                        <li class="flex items-center space-x-2">
+                                            <i data-lucide="check" class="w-3 h-3"></i>
+                                            <span>Minimal 8 karakter</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i data-lucide="check" class="w-3 h-3"></i>
+                                            <span>Kombinasi huruf besar dan kecil</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i data-lucide="check" class="w-3 h-3"></i>
+                                            <span>Mengandung angka dan simbol</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end pt-4">
+                            <button type="submit" class="group relative overflow-hidden rounded-xl bg-gradient-to-r from-red-500 to-pink-500 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-red-500/25 hover:shadow-xl hover:scale-105">
+                                <span class="relative z-10 flex items-center space-x-2">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                    <span>Update Password</span>
+                                </span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </button>
                         </div>
                     </form>
+                </div>
+            </div>
+            
+            <!-- Account Statistics -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                                <i data-lucide="calendar" class="w-6 h-6 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-500">Bergabung Sejak</div>
+                            <div class="text-lg font-bold text-gray-900">{{ auth('admin')->user()->created_at?->format('M Y') ?? 'N/A' }}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                                <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-500">Login Terakhir</div>
+                            <div class="text-lg font-bold text-gray-900">{{ auth('admin')->user()->updated_at?->format('d M, H:i') ?? 'N/A' }}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-500">Status Akun</div>
+                            <div class="text-lg font-bold text-green-600">Aktif</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
