@@ -1,4 +1,7 @@
 {
+    "name": "laraventory",
+    "description": "Smart Inventory Management System for household appliance spare parts",
+    "version": "1.0.0",
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "type": "module",

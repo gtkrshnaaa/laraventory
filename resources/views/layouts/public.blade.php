@@ -121,7 +121,7 @@
                         <i data-lucide="package" class="w-5 h-5 text-white"></i>
                     </div>
                     <a href="/" class="font-display font-bold text-xl bg-gradient-to-r from-ocean-600 to-mint-600 bg-clip-text text-transparent">
-                        {{ config('app.name') }}
+                        Laraventory
                     </a>
                 </div>
 
@@ -183,7 +183,7 @@
                             <i data-lucide="package" class="w-6 h-6 text-white"></i>
                         </div>
                         <span class="font-display font-black text-2xl bg-gradient-to-r from-ocean-600 to-mint-600 bg-clip-text text-transparent">
-                            {{ config('app.name') }}
+                            Laraventory
                         </span>
                     </div>
                     

@@ -111,7 +111,7 @@
                         </div>
                         <div class="flex flex-col">
                             <a href="{{ route('admin.dashboard') }}" class="font-display font-bold text-lg bg-gradient-to-r from-ocean-600 to-mint-600 bg-clip-text text-transparent">
-                                {{ config('app.name') }}
+                                Laraventory
                             </a>
                             <span class="text-xs text-ocean-500 font-medium">Admin Panel</span>
                         </div>

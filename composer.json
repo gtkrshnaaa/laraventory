@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "gtkrshnaaa/laraventory",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Laraventory - Smart Inventory Management System for household appliance spare parts",
+    "keywords": ["laravel", "inventory", "management", "spare-parts", "household-appliances"],
     "license": "MIT",
     "require": {
         "php": "^8.2",

@@ -1,6 +1,6 @@
-## 🚀 Project Overview
+# 📦 Laraventory - Smart Inventory Management System
 
-Laravel Inventory Management System is a web-based application to manage stock of household appliance parts and products (e.g., AC, fridge, washing machine, TV, stove). The app is built with Laravel 12.x and a CDN-only frontend (no Node/NPM, no Vite).
+**Laraventory** adalah sistem manajemen inventori modern berbasis web untuk mengelola stok suku cadang alat rumah tangga seperti AC, kulkas, mesin cuci, TV, dan kompor. Dibangun dengan Laravel 12.x dan frontend CDN-only (tanpa Node/NPM, tanpa Vite) untuk kemudahan deployment dan maintenance.
 
 ## ✨ Key Features (MVP)
 
@@ -67,7 +67,7 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel_inventory
+DB_DATABASE=laraventory
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -155,7 +155,19 @@ Seeders populate basic data for admins, categories, suppliers, products, and a f
 - Some endpoints such as reports export are placeholders for future enhancement.
 - Image upload requires `php artisan storage:link` and writable `storage/`.
 
+## 🎨 UI/UX Features
+
+- **Modern Design**: Glassmorphism effects dengan ocean-mint color scheme
+- **Responsive Layout**: Mobile-first design yang optimal di semua device
+- **Interactive Elements**: Smooth animations dan hover effects
+- **Background Pattern**: Subtle grid pattern untuk visual enhancement
+- **Typography**: Hierarki yang jelas dengan Inter font family
+
 ## ✅ Status
 
-- MVP is functional: admin login, products/categories/suppliers CRUD, inventory adjustments, and basic reports.
-- Please open issues or PRs for improvements and additional features.
+- ✅ MVP functional: admin login, products/categories/suppliers CRUD, inventory adjustments, dan basic reports
+- ✅ Modern UI/UX dengan design system yang konsisten
+- ✅ Responsive design untuk mobile dan desktop
+- ✅ Background pattern dan glassmorphism effects
+- 🔄 Export/import features (placeholder)
+- 📝 Please open issues atau PRs untuk improvements dan additional features
