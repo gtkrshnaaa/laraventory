@@ -1,61 +1,161 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 🚀 Project Overview
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel Inventory Management System is a web-based application to manage stock of household appliance parts and products (e.g., AC, fridge, washing machine, TV, stove). The app is built with Laravel 12.x and a CDN-only frontend (no Node/NPM, no Vite).
 
-## About Laravel
+## ✨ Key Features (MVP)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Products Management**
+  - CRUD Products with Eloquent (name, SKU, category, supplier, price, cost, stock, min_stock, description, image path)
+  - Optional image upload (stored in `storage/app/public/products`), served via `storage:link`
+  - Filters: search (name/SKU), category, stock status (in stock / low stock / out of stock)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Categories**
+  - CRUD Categories using Eloquent
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Suppliers**
+  - CRUD Suppliers using Eloquent
 
-## Learning Laravel
+- **Inventory**
+  - Stock adjustments (in / out) with transactional updates
+  - Records inventory movements in `inventory_movements`
+  - Low-stock highlights
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Reports**
+  - Stock report (current stock per product)
+  - Transactions report (paginated inventory movements)
+  - Export placeholder endpoint prepared (not finalized)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Authentication (Admin)**
+  - Separate `admin` guard and `admins` provider
+  - Login/logout routes and middleware-protected admin area
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Public Landing Page**
+  - Simple landing page (no authentication) using Tailwind CDN
 
-## Laravel Sponsors
+## 🛠️ Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Backend:** Laravel 12.x (PHP 8.1+)
+- **Frontend:** Blade + Tailwind CSS (PlayCDN) + (optional) Alpine.js (PlayCDN)
+- **Database:** MySQL
+- **Build Tools:** None. No Vite, no Node/NPM. Fully CDN-based frontend.
 
-### Premium Partners
+## 📦 Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1) Clone and enter the project
 
-## Contributing
+```bash
+git clone https://github.com/gtkrshnaaa/laraventory.git
+cd laraventory
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2) Install PHP dependencies
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3) Environment and app key
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4) Configure database in `.env`
 
-## License
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_inventory
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5) Run migrations and seeders
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+6) Create storage symlink for product images
+
+```bash
+php artisan storage:link
+```
+
+7) Start the development server
+
+```bash
+php artisan serve
+```
+
+8) Open the app
+
+- Public: http://localhost:8000
+- Admin: http://localhost:8000/admin/login
+
+## 🔐 Default Account
+
+- **Admin**
+  - Email: admin@example.com
+  - Password: password
+
+## 🔎 Routes Overview
+
+- **Public**
+  - `GET /` → landing page (named `home`)
+
+- **Admin Auth**
+  - `GET /admin/login` → login form
+  - `POST /admin/login` → login
+  - `POST /admin/logout` → logout
+
+- **Admin Dashboard**
+  - `GET /admin` and `GET /admin/dashboard` → dashboard (protected by `admin` middleware)
+
+- **Products**
+  - Resourceful routes under `/admin/products` (index, create, store, show, edit, update, destroy)
+  - Extra: `POST /admin/products/bulk-actions`, `GET /admin/products/export` (placeholder), `POST /admin/products/import` (placeholder)
+
+- **Categories**
+  - `GET /admin/categories` (index), `POST /admin/categories` (store), `PUT /admin/categories/{id}` (update), `DELETE /admin/categories/{id}` (destroy)
+
+- **Suppliers**
+  - `GET /admin/suppliers`, `GET /admin/suppliers/create`, `POST /admin/suppliers`, `GET /admin/suppliers/{id}/edit`, `PUT /admin/suppliers/{id}`, `DELETE /admin/suppliers/{id}`
+
+- **Inventory**
+  - `GET /admin/inventory` (overview)
+  - `POST /admin/inventory/adjust` (in/out)
+
+- **Reports**
+  - `GET /admin/reports/stock` (stock report)
+  - `GET /admin/reports/transactions` (inventory transactions)
+  - `POST /admin/reports/export` (placeholder)
+
+- **Profile**
+  - `GET /admin/profile` (edit)
+  - `PUT /admin/profile` (update)
+  - `PUT /admin/profile/password` (update password)
+
+## 📁 Database Schema (Migrations)
+
+- `admins` (auth for admin guard)
+- `categories` (name, description)
+- `suppliers` (name, phone, email, address)
+- `products` (name, sku, category_id, supplier_id, price, cost, stock, min_stock, description, image_path, softDeletes)
+- `inventory_movements` (product_id, type: in|out, quantity, note, created_by, timestamps)
+
+Seeders populate basic data for admins, categories, suppliers, products, and a few sample movements.
+
+## 🧭 Development Notes
+
+- No Vite / Node / NPM. Frontend assets use Tailwind and (optional) Alpine via PlayCDN only.
+- Admin layout and public layout are CDN-based, no build step required.
+- Some endpoints such as reports export are placeholders for future enhancement.
+- Image upload requires `php artisan storage:link` and writable `storage/`.
+
+## ✅ Status
+
+- MVP is functional: admin login, products/categories/suppliers CRUD, inventory adjustments, and basic reports.
+- Please open issues or PRs for improvements and additional features.
