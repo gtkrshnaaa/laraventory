@@ -20,7 +20,7 @@
 @section('content')
     <div class="py-6">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-transparent rounded-2xl">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl">
                 <div class="p-6 bg-white/50">
                     <!-- Search and Filter -->
                     <div class="mb-8">
@@ -76,7 +76,7 @@
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="overflow-hidden border border-transparent rounded-2xl bg-white/60 backdrop-blur-sm">
+                                <div class="overflow-hidden border border-orange-200/30 rounded-2xl bg-white/60 backdrop-blur-sm">
                                     <table class="min-w-full divide-y divide-gray-200/50">
                                         <thead class="bg-white backdrop-blur-sm">
                                             <tr>
@@ -114,11 +114,11 @@
                                         </thead>
                                         <tbody class="bg-white/40 backdrop-blur-sm divide-y divide-gray-200/30">
                                             @forelse($products as $product)
-                                                <tr class="hover:bg-white/60 transition-colors duration-200">
+                                                <tr class="hover:bg-orange-50/30 transition-colors duration-200 border-b border-orange-100/30 last:border-0">
                                                     <td class="px-6 py-5 whitespace-nowrap">
                                                         <div class="flex items-center">
                                                             <div class="flex-shrink-0 h-12 w-12">
-                                                                <div class="h-12 w-12 rounded-xl bg-orange-50 border border-transparent overflow-hidden">
+                                                                <div class="h-12 w-12 rounded-xl bg-orange-50/50 border border-orange-200/30 overflow-hidden">
                                                                     <img class="h-full w-full object-cover" src="{{ $product->image_path ? asset('storage/'.$product->image_path) : 'https://via.placeholder.com/48' }}" alt="{{ $product->name }}">
                                                                 </div>
                                                             </div>
@@ -154,16 +154,16 @@
                                                     </td>
                                                     <td class="px-6 py-5 whitespace-nowrap text-right text-sm font-medium">
                                                         <div class="flex justify-end space-x-2">
-                                                            <a href="#" class="p-2 text-orange-600 hover:text-orange-800 bg-orange-50/50 hover:bg-orange-100 rounded-lg transition-colors duration-200" title="Lihat Detail">
+                                                            <a href="#" class="p-2 text-orange-600 hover:text-orange-800 bg-orange-50/30 hover:bg-orange-100/50 rounded-lg border border-orange-200/30 hover:border-orange-300/50 transition-colors duration-200" title="Lihat Detail">
                                                                 <i data-lucide="eye" class="w-4 h-4"></i>
                                                             </a>
-                                                            <a href="{{ route('admin.products.edit', $product->id) }}" class="group relative p-2 text-amber-600 hover:text-amber-800 bg-amber-50/50 hover:bg-amber-100 rounded-lg transition-all duration-200 hover:scale-110" title="Edit">
+                                                            <a href="{{ route('admin.products.edit', $product->id) }}" class="p-2 text-blue-600 hover:text-blue-800 bg-blue-50/30 hover:bg-blue-100/50 rounded-lg border border-blue-200/30 hover:border-blue-300/50 transition-colors duration-200" title="Edit">
                                                                 <i data-lucide="edit" class="w-4 h-4"></i>
                                                             </a>
-                                                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?')" class="inline">
+                                                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button type="submit" class="group relative p-2 text-red-600 hover:text-red-800 bg-red-50/50 hover:bg-red-100 rounded-lg transition-all duration-200 hover:scale-110" title="Hapus">
+                                                                <button type="submit" class="p-2 text-red-600 hover:text-red-800 bg-red-50/30 hover:bg-red-100/50 rounded-lg border border-red-200/30 hover:border-red-300/50 transition-colors duration-200" title="Hapus">
                                                                     <i data-lucide="trash-2" class="w-4 h-4"></i>
                                                                 </button>
                                                             </form>
@@ -174,7 +174,7 @@
                                                 <tr>
                                                     <td colspan="5" class="px-6 py-12 text-center">
                                                         <div class="flex flex-col items-center justify-center">
-                                                            <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mb-4">
+                                                            <div class="w-16 h-16 bg-orange-50/50 rounded-2xl border border-orange-200/30 flex items-center justify-center mb-4">
                                                                 <i data-lucide="package" class="w-8 h-8 text-gray-400"></i>
                                                             </div>
                                                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Tidak ada produk yang ditemukan</h3>

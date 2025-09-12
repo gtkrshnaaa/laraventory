@@ -9,14 +9,15 @@
             <p class="text-sm text-gray-600 mt-1">Kelola stok dan pergerakan inventory produk</p>
         </div>
         <div x-data="{ showForm: false }" class="relative">
-            <button @click="showForm = !showForm" class="rounded-xl bg-orange-600 hover:bg-orange-700 px-6 py-3 font-semibold text-white transition-colors duration-200">
-                <span class="flex items-center space-x-2">
-                    <i data-lucide="package-plus" class="w-5 h-5"></i>
+            <button @click="showForm = !showForm" class="relative group rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-6 py-3 font-medium text-white shadow-sm shadow-orange-200/50 hover:shadow-orange-200 transition-all duration-200 transform hover:-translate-y-0.5">
+                <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                <span class="relative flex items-center space-x-2">
+                    <i data-lucide="package-plus" class="w-5 h-5 text-white/90"></i>
                     <span>Adjust Stok</span>
                 </span>
             </button>
             
-            <div x-show="showForm" x-transition class="absolute right-0 top-full mt-2 w-96 bg-white/90 backdrop-blur-sm border border-transparent rounded-2xl p-6 z-50">
+            <div x-show="showForm" x-transition class="absolute right-0 top-full mt-2 w-96 bg-white/90 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6 z-50 shadow-lg shadow-orange-100/30">
                 <form action="{{ route('admin.inventory.adjust') }}" method="POST" class="space-y-4">
                     @csrf
                     <div>
@@ -46,13 +47,14 @@
                         <input type="text" name="note" class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Catatan (opsional)">
                     </div>
                     <div class="flex space-x-3">
-                        <button type="submit" class="flex-1 rounded-xl bg-orange-600 hover:bg-orange-700 px-4 py-3 font-semibold text-white transition-colors duration-200">
-                            <span class="flex items-center justify-center space-x-2">
+                        <button type="submit" class="relative group flex-1 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-4 py-3 font-medium text-white shadow-sm shadow-orange-200/50 hover:shadow-orange-200 transition-all duration-200 transform hover:-translate-y-0.5">
+                            <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                            <span class="relative flex items-center justify-center space-x-2">
                                 <i data-lucide="check" class="w-4 h-4"></i>
                                 <span>Adjust</span>
                             </span>
                         </button>
-                        <button type="button" @click="showForm = false" class="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-colors duration-200">
+                        <button type="button" @click="showForm = false" class="flex-1 rounded-xl bg-white/80 hover:bg-gray-100 border border-gray-200 px-4 py-3 font-medium text-gray-700 transition-all duration-200 transform hover:-translate-y-0.5">
                             <i data-lucide="x" class="w-4 h-4"></i>
                         </button>
                     </div>
@@ -183,6 +185,11 @@
                                         <h4 class="font-semibold text-gray-900 text-base mb-2 leading-tight">{{ $ls->name }}</h4>
                                         <div class="flex flex-col space-y-2">
                                             <div class="flex items-center space-x-2">
+                                              <a href="{{ route('admin.products.edit', $ls->id) }}" class="group inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors duration-200">
+                    <span class="relative">
+                        Atur Stok
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-200"></span>
+                    </span>
                                                 <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800 border border-orange-200">
                                                     <i data-lucide="trending-down" class="w-3 h-3 mr-1"></i>
                                                     Stok: {{ $ls->stock }}
