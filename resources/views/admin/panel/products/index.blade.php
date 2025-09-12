@@ -19,7 +19,7 @@
 
 @section('content')
     <div class="py-6 h-full">
-        <div class="h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="h-full mx-auto max-w-full">
             <div class="h-full flex flex-col bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl">
                 <div class="p-6 bg-white/50">
                     <!-- Enhanced Search and Filter -->

@@ -27,7 +27,7 @@
 
 @section('content')
     <div class="py-6">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-full">
             <!-- Summary Cards -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                 <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6">

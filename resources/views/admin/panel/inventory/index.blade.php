@@ -66,7 +66,7 @@
 
 @section('content')
     <div class="py-6 h-full">
-        <div class="h-full mx-auto max-w-7xl sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="h-full mx-auto max-w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 flex flex-col bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
                 <div class="p-6 bg-white/50 border-b border-orange-200/30">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">

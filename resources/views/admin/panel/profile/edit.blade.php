@@ -18,7 +18,7 @@
 
 @section('content')
     <div class="py-6">
-        <div class="mx-auto max-w-4xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-full">
             <!-- Profile Info Card -->
             <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl mb-8">
                 <div class="p-8 bg-white">

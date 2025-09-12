@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="py-6">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="mx-auto max-w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- List -->
             <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
                 <div class="p-6 bg-white border-b border-transparent">
