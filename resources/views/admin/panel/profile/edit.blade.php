@@ -3,13 +3,13 @@
 @section('header')
     <div class="flex justify-between items-center">
         <div>
-            <h2 class="text-2xl font-bold bg-gradient-to-r from-ocean-600 to-mint-600 bg-clip-text text-transparent">
+            <h2 class="text-2xl font-bold text-orange-700">
                 Profil Admin
             </h2>
             <p class="text-sm text-gray-600 mt-1">Kelola informasi profil dan keamanan akun</p>
         </div>
         <div class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-gradient-to-br from-ocean-500 to-mint-500 rounded-xl flex items-center justify-center shadow-lg">
+            <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
                 <i data-lucide="user" class="w-6 h-6 text-white"></i>
             </div>
         </div>
@@ -20,11 +20,11 @@
     <div class="py-6">
         <div class="mx-auto max-w-4xl sm:px-6 lg:px-8">
             <!-- Profile Info Card -->
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl mb-8">
-                <div class="p-8 bg-gradient-to-br from-white/50 to-ocean-50/30">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl mb-8">
+                <div class="p-8 bg-white">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-ocean-500 to-mint-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center">
                                 <i data-lucide="user" class="w-8 h-8 text-white"></i>
                             </div>
                             <div>
@@ -50,7 +50,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="text" name="name" value="{{ old('name', auth('admin')->user()->name ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                            placeholder="Masukkan nama lengkap" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
@@ -65,7 +65,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="email" name="email" value="{{ old('email', auth('admin')->user()->email ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                            placeholder="admin@example.com" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
@@ -81,7 +81,7 @@
                             </label>
                             <div class="relative">
                                 <input type="text" name="phone" value="{{ old('phone', auth('admin')->user()->phone ?? '') }}" 
-                                       class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-ocean-500/20 focus:border-ocean-500 transition-all duration-200 shadow-sm" 
+                                       class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                        placeholder="+62 812-3456-7890">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
@@ -90,12 +90,11 @@
                         </div>
                         
                         <div class="flex justify-end pt-4">
-                            <button type="submit" class="group relative overflow-hidden rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-ocean-500/25 hover:shadow-xl hover:scale-105">
-                                <span class="relative z-10 flex items-center space-x-2">
+                            <button type="submit" class="rounded-xl bg-orange-600 hover:bg-orange-700 px-8 py-3 font-semibold text-white transition-colors duration-200">
+                                <span class="flex items-center space-x-2">
                                     <i data-lucide="save" class="w-5 h-5"></i>
                                     <span>Simpan Profil</span>
                                 </span>
-                                <div class="absolute inset-0 bg-gradient-to-r from-mint-500 to-ocean-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </button>
                         </div>
                     </form>
@@ -103,11 +102,11 @@
             </div>
 
             <!-- Security Settings Card -->
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl">
-                <div class="p-8 bg-gradient-to-br from-white/50 to-red-50/30">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl">
+                <div class="p-8 bg-white">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center">
                                 <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
                             </div>
                             <div>
@@ -132,7 +131,7 @@
                             </label>
                             <div class="relative">
                                 <input :type="showPasswords ? 'text' : 'password'" name="current_password" 
-                                       class="w-full pl-12 pr-12 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                       class="w-full pl-12 pr-12 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                        placeholder="Masukkan password saat ini" required>
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="key" class="w-4 h-4 text-gray-400"></i>
@@ -151,7 +150,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                            placeholder="Password baru" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
@@ -166,7 +165,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password_confirmation" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all duration-200 shadow-sm" 
+                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
                                            placeholder="Konfirmasi password" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="shield" class="w-4 h-4 text-gray-400"></i>
@@ -176,14 +175,14 @@
                         </div>
                         
                         <!-- Password Requirements -->
-                        <div class="bg-yellow-50/80 backdrop-blur-sm border border-yellow-200/50 rounded-xl p-4">
+                        <div class="bg-orange-50 backdrop-blur-sm border border-orange-200/50 rounded-xl p-4">
                             <div class="flex items-start space-x-3">
                                 <div class="flex-shrink-0">
-                                    <i data-lucide="info" class="w-5 h-5 text-yellow-600"></i>
+                                    <i data-lucide="info" class="w-5 h-5 text-orange-600"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-sm font-semibold text-yellow-800 mb-2">Persyaratan Password:</h4>
-                                    <ul class="text-xs text-yellow-700 space-y-1">
+                                    <h4 class="text-sm font-semibold text-orange-800 mb-2">Persyaratan Password:</h4>
+                                    <ul class="text-xs text-orange-700 space-y-1">
                                         <li class="flex items-center space-x-2">
                                             <i data-lucide="check" class="w-3 h-3"></i>
                                             <span>Minimal 8 karakter</span>
@@ -202,12 +201,11 @@
                         </div>
                         
                         <div class="flex justify-end pt-4">
-                            <button type="submit" class="group relative overflow-hidden rounded-xl bg-gradient-to-r from-red-500 to-pink-500 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-red-500/25 hover:shadow-xl hover:scale-105">
-                                <span class="relative z-10 flex items-center space-x-2">
+                            <button type="submit" class="rounded-xl bg-orange-600 hover:bg-orange-700 px-8 py-3 font-semibold text-white transition-colors duration-200">
+                                <span class="flex items-center space-x-2">
                                     <i data-lucide="shield-check" class="w-5 h-5"></i>
                                     <span>Update Password</span>
                                 </span>
-                                <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </button>
                         </div>
                     </form>
@@ -216,10 +214,10 @@
             
             <!-- Account Statistics -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="calendar" class="w-6 h-6 text-white"></i>
                             </div>
                         </div>
@@ -230,10 +228,10 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="clock" class="w-6 h-6 text-white"></i>
                             </div>
                         </div>
@@ -244,10 +242,10 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
                             </div>
                         </div>
