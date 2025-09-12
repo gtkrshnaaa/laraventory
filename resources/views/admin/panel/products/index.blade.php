@@ -18,9 +18,9 @@
 @endsection
 
 @section('content')
-    <div class="py-6">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl">
+    <div class="py-6 h-full">
+        <div class="h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="h-full flex flex-col bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl">
                 <div class="p-6 bg-white/50">
                     <!-- Enhanced Search and Filter -->
                     <div class="mb-8" x-data="{
@@ -225,10 +225,10 @@
                     </div>
 
                     <!-- Products Table -->
-                    <div class="flex flex-col">
-                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="overflow-hidden border border-orange-200/30 rounded-2xl bg-white/60 backdrop-blur-sm">
+                    <div class="flex-1 flex flex-col min-h-0">
+                        <div class="flex-1 overflow-auto">
+                            <div class="py-2">
+                                <div class="border border-orange-200/30 rounded-2xl bg-white/60 backdrop-blur-sm overflow-hidden">
                                     <table class="min-w-full divide-y divide-gray-200/50">
                                         <thead class="bg-white backdrop-blur-sm">
                                             <tr>
@@ -353,7 +353,7 @@
 
                     <!-- Pagination -->
                     @if(method_exists($products, 'links'))
-                        <div class="mt-4 px-6">
+                        <div class="px-6 py-4 border-t border-orange-200/30 bg-white/50">
                             {{ $products->withQueryString()->links() }}
                         </div>
                     @endif

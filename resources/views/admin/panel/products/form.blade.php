@@ -28,15 +28,18 @@
     @csrf
     @method($method)
     
-    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6 transition-all duration-200 hover:shadow-md">
-        <div class="md:grid md:grid-cols-3 md:gap-6">
-            <div class="md:col-span-1">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Informasi Produk</h3>
-                <p class="mt-1 text-sm text-gray-500">
-                    Masukkan detail produk dengan lengkap dan akurat.
-                </p>
-            </div>
-            <div class="mt-5 md:mt-0 md:col-span-2">
+    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md">
+        <div class="p-6 bg-white/50 border-b border-orange-200/30">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                <i data-lucide="package" class="w-5 h-5 mr-2 text-orange-600"></i>
+                Informasi Produk
+            </h3>
+            <p class="mt-1 text-sm text-gray-600">
+                Masukkan detail produk dengan lengkap dan akurat.
+            </p>
+        </div>
+        <div class="p-6">
+            <div class="space-y-6">
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-4">
                         <label for="name" class="block text-sm font-medium text-gray-700">Nama Produk <span class="text-red-500">*</span></label>
@@ -160,32 +163,42 @@
         </div>
     </div>
 
-    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl p-6 transition-all duration-200 hover:shadow-md">
-        <div class="md:grid md:grid-cols-3 md:gap-6">
-            <div class="md:col-span-1">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Gambar Produk</h3>
-                <p class="mt-1 text-sm text-gray-500">
-                    Unggah gambar produk yang menarik.
-                </p>
-            </div>
-            <div class="mt-5 md:mt-0 md:col-span-2">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 h-20 w-20 rounded-md overflow-hidden border border-orange-200/50 bg-orange-50">
-                        <img id="image-preview" class="h-full w-full object-cover" 
-                            src="{{ $product->image_path ? asset('storage/'.$product->image_path) : 'https://via.placeholder.com/80?text=No+Image' }}" 
-                            alt="Product preview">
+    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md">
+        <div class="p-6 bg-white/50 border-b border-orange-200/30">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                <i data-lucide="image" class="w-5 h-5 mr-2 text-orange-600"></i>
+                Gambar Produk
+            </h3>
+            <p class="mt-1 text-sm text-gray-600">
+                Unggah gambar produk yang jelas dan menarik.
+            </p>
+        </div>
+        <div class="p-6">
+            <div class="space-y-4">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="h-24 w-24 rounded-xl overflow-hidden border-2 border-dashed border-orange-200 bg-orange-50/50 flex items-center justify-center">
+                            <img id="image-preview" class="h-full w-full object-cover" 
+                                src="{{ $product->image_path ? asset('storage/'.$product->image_path) : 'https://via.placeholder.com/96?text=No+Image' }}" 
+                                alt="Product preview">
+                        </div>
                     </div>
-                    <div class="ml-4">
-                        <input type="file" name="image" id="image" accept="image/*" 
-                            class="block w-full text-sm text-gray-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-md file:border file:border-orange-200/50
-                            file:text-sm file:font-semibold
-                            file:bg-orange-50 file:text-orange-700
-                            hover:file:bg-orange-100">
-                        <p class="mt-1 text-xs text-gray-500">
-                            Format: JPG, PNG, atau GIF (maks. 2MB)
-                        </p>
+                    <div class="flex-1">
+                        <div class="space-y-2">
+                            <label for="image" class="block text-sm font-medium text-gray-700">Unggah Gambar</label>
+                            <div class="flex items-center space-x-2">
+                                <label class="cursor-pointer">
+                                    <span class="px-4 py-2.5 text-sm font-medium text-orange-700 bg-orange-50 border border-orange-200 rounded-xl hover:bg-orange-100 transition-colors duration-200 flex items-center space-x-2">
+                                        <i data-lucide="upload" class="w-4 h-4"></i>
+                                        <span>Pilih File</span>
+                                    </span>
+                                    <input type="file" name="image" id="image" accept="image/*" class="hidden">
+                                </label>
+                            </div>
+                            <p class="text-xs text-gray-500">
+                                Format: JPG, PNG, GIF (Maks. 2MB)
+                            </p>
+                        </div>
                         @error('image')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -195,14 +208,17 @@
         </div>
     </div>
 
-    <div class="flex justify-end">
-        <button type="button" class="bg-white/80 backdrop-blur-sm py-2.5 px-4 border border-gray-300/50 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-100/80 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm">
-            Batal
-        </button>
-        <button type="submit" class="relative group ml-3 inline-flex justify-center py-2.5 px-6 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-sm shadow-orange-200/50 hover:shadow-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 transform hover:-translate-y-0.5">
-            <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-            <span class="relative">
-                {{ $buttonText }}
+    <div class="flex justify-end space-x-3 mt-6 p-6 bg-white/50 border-t border-orange-200/30 rounded-b-2xl">
+        <a href="{{ route('admin.products.index') }}" class="px-6 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-200/50 rounded-xl hover:bg-gray-50/80 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 hover:shadow-sm">
+            <span class="flex items-center space-x-2">
+                <i data-lucide="x" class="w-4 h-4"></i>
+                <span>Batal</span>
+            </span>
+        </a>
+        <button type="submit" class="px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 hover:shadow-sm">
+            <span class="flex items-center space-x-2">
+                <i data-lucide="{{ $isEdit ? 'save' : 'plus' }}" class="w-4 h-4 text-white/90"></i>
+                <span>{{ $buttonText }}</span>
             </span>
         </button>
     </div>

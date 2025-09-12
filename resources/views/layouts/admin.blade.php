@@ -23,9 +23,9 @@
     
     @stack('styles')
 </head>
-<body class="h-full font-sans bg-white" x-data="{ sidebarOpen: false, userMenuOpen: false }">
+<body class="min-h-screen flex flex-col font-sans bg-white" x-data="{ sidebarOpen: false, userMenuOpen: false }">
     <!-- Top navigation -->
-    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/90 border-b border-transparent">
+    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/90 border-b border-transparent flex-shrink-0">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <!-- Left side -->
@@ -105,7 +105,7 @@
         </div>
     </nav>
 
-    <div class="flex h-[calc(100vh-4rem)]">
+    <div class="flex flex-1 overflow-hidden">
         <!-- Sidebar -->
         <aside class="fixed inset-y-16 left-0 z-40 w-64 transform transition-transform duration-300 lg:relative lg:inset-y-0 lg:translate-x-0" :class="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }" x-show="sidebarOpen || window.innerWidth >= 1024" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
             <div class="h-full bg-white/80 backdrop-blur-sm border border-transparent p-4">
@@ -155,7 +155,7 @@
 
         <!-- Main content -->
         <main class="flex-1 overflow-auto">
-            <div class="p-6">
+            <div class="p-6 max-w-full">
                 <!-- Flash messages -->
                 @if (session('status'))
                     <div class="mb-6 rounded-xl bg-orange-50 border border-orange-200 p-4">

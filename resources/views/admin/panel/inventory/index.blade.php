@@ -65,10 +65,10 @@
 @endsection
 
 @section('content')
-    <div class="py-6">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm border border-transparent rounded-2xl overflow-hidden">
-                <div class="p-6 bg-white border-b border-transparent">
+    <div class="py-6 h-full">
+        <div class="h-full mx-auto max-w-7xl sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 flex flex-col bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
+                <div class="p-6 bg-white/50 border-b border-orange-200/30">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-orange-600 rounded-xl flex items-center justify-center">
@@ -111,10 +111,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <div class="overflow-hidden border border-transparent rounded-2xl bg-white/60 backdrop-blur-sm m-6">
-                        <table class="min-w-full divide-y divide-gray-200/50">
-                            <thead class="bg-white backdrop-blur-sm">
+                <div class="flex-1 overflow-hidden flex flex-col">
+                    <div class="flex-1 overflow-auto p-6 pt-0">
+                        <div class="border border-orange-200/30 rounded-2xl bg-white/60 backdrop-blur-sm overflow-hidden">
+                            <table class="min-w-full divide-y divide-orange-200/30">
+                                <thead class="bg-white/80 backdrop-blur-sm">
                                 <tr>
                                     <th class="px-6 py-4 text-left text-xs font-semibold text-orange-700 uppercase tracking-wider">
                                         <div class="flex items-center space-x-2">
@@ -144,7 +145,7 @@
                             </thead>
                             <tbody class="bg-white/40 backdrop-blur-sm divide-y divide-gray-200/30">
                                 @foreach($products as $p)
-                                    <tr class="hover:bg-white/60 transition-colors duration-200">
+                                    <tr class="hover:bg-white/60 transition-colors duration-200 border-b border-orange-200/30 last:border-0">
                                         <td class="px-6 py-5 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
@@ -185,18 +186,19 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 @if(method_exists($products, 'links'))
-                    <div class="p-6">
+                    <div class="p-4 border-t border-orange-200/30 bg-white/50">
                         {{ $products->links() }}
                     </div>
                 @endif
             </div>
 
-            <div class="bg-white/80 backdrop-blur-sm border border-transparent rounded-2xl overflow-hidden">
-                <div class="p-6 bg-orange-50 border-b border-transparent">
+            <div class="flex flex-col bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
+                <div class="p-6 bg-orange-50/80 border-b border-orange-200/30">
                     <div class="flex items-center space-x-3">
                         <div class="w-8 h-8 bg-orange-600 rounded-xl flex items-center justify-center">
                             <i data-lucide="alert-triangle" class="w-4 h-4 text-white"></i>
@@ -207,9 +209,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="divide-y divide-gray-200/30">
+                <div class="flex-1 overflow-auto">
+                    <div class="divide-y divide-orange-200/30">
                     @forelse($lowStock as $ls)
-                        <div class="p-4 hover:bg-white/60 transition-colors duration-200">
+                        <div class="p-4 hover:bg-white/60 transition-colors duration-200 border-b border-orange-200/30 last:border-0">
                             <div class="space-y-4">
                                 <!-- Product Info -->
                                 <div class="flex items-start space-x-3">
