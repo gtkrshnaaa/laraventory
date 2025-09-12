@@ -22,7 +22,7 @@
                     @csrf
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Produk</label>
-                        <select name="product_id" class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                        <select name="product_id" class="w-full px-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50" required>
                             <option value="">Pilih Produk</option>
                             @foreach($products as $p)
                                 <option value="{{ $p->id }}">{{ $p->name }} (Stok: {{ $p->stock }})</option>
@@ -32,29 +32,29 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Tipe</label>
-                            <select name="type" class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                            <select name="type" class="w-full px-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50" required>
                                 <option value="in">Masuk</option>
                                 <option value="out">Keluar</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
-                            <input type="number" name="quantity" min="1" class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Qty" required>
+                            <input type="number" name="quantity" min="1" class="w-full px-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" placeholder="Qty" required>
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Catatan</label>
-                        <input type="text" name="note" class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Catatan (opsional)">
+                        <input type="text" name="note" class="w-full px-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" placeholder="Catatan (opsional)">
                     </div>
                     <div class="flex space-x-3">
-                        <button type="submit" class="relative group flex-1 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-4 py-3 font-medium text-white shadow-sm shadow-orange-200/50 hover:shadow-orange-200 transition-all duration-200 transform hover:-translate-y-0.5">
+                        <button type="submit" class="relative group flex-1 py-2.5 px-4 text-sm font-medium text-white rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-sm shadow-orange-200/50 hover:shadow-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 transform hover:-translate-y-0.5">
                             <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                             <span class="relative flex items-center justify-center space-x-2">
                                 <i data-lucide="check" class="w-4 h-4"></i>
                                 <span>Adjust</span>
                             </span>
                         </button>
-                        <button type="button" @click="showForm = false" class="flex-1 rounded-xl bg-white/80 hover:bg-gray-100 border border-gray-200 px-4 py-3 font-medium text-gray-700 transition-all duration-200 transform hover:-translate-y-0.5">
+                        <button type="button" @click="showForm = false" class="relative group flex-1 py-2.5 px-4 text-sm font-medium text-gray-700 bg-white/80 hover:bg-gray-50/80 border border-gray-200/50 rounded-xl shadow-sm shadow-gray-100/50 hover:shadow-gray-200/50 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-300/50 transition-all duration-200 transform hover:-translate-y-0.5">
                             <i data-lucide="x" class="w-4 h-4"></i>
                         </button>
                     </div>
@@ -69,11 +69,46 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm border border-transparent rounded-2xl overflow-hidden">
                 <div class="p-6 bg-white border-b border-transparent">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-orange-600 rounded-xl flex items-center justify-center">
-                            <i data-lucide="package" class="w-4 h-4 text-white"></i>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-orange-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="package" class="w-4 h-4 text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">Daftar Produk & Stok</h3>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Daftar Produk & Stok</h3>
+                        
+                        <!-- Search and Filter -->
+                        <div class="w-full md:w-auto">
+                            <form action="{{ route('admin.inventory.index') }}" method="GET" class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+                                <div class="relative flex-1">
+                                    <input type="text" 
+                                           name="search" 
+                                           value="{{ request('search') }}" 
+                                           class="w-full pl-10 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
+                                           placeholder="Cari produk...">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </div>
+                                
+                                <select name="stock_status" class="w-full sm:w-40 px-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50">
+                                    <option value="">Semua Stok</option>
+                                    <option value="low" {{ request('stock_status') == 'low' ? 'selected' : '' }}>Stok Sedikit</option>
+                                    <option value="out" {{ request('stock_status') == 'out' ? 'selected' : '' }}>Stok Habis</option>
+                                    <option value="available" {{ request('stock_status') == 'available' ? 'selected' : '' }}>Tersedia</option>
+                                </select>
+                                
+                                <button type="submit" class="px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-xl shadow-sm shadow-orange-200/50 hover:shadow-orange-200 transition-all duration-200 transform hover:-translate-y-0.5">
+                                    <i data-lucide="filter" class="w-4 h-4 inline-block mr-1"></i> Filter
+                                </button>
+                                
+                                @if(request('search') || request('stock_status'))
+                                    <a href="{{ route('admin.inventory.index') }}" class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-200/50 hover:bg-gray-50/80 rounded-xl shadow-sm shadow-gray-100/50 hover:shadow-gray-200/50 transition-all duration-200 flex items-center justify-center">
+                                        <i data-lucide="x" class="w-4 h-4 mr-1"></i> Reset
+                                    </a>
+                                @endif
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="overflow-x-auto">

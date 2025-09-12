@@ -50,7 +50,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="text" name="name" value="{{ old('name', auth('admin')->user()->name ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                            placeholder="Masukkan nama lengkap" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
@@ -65,7 +65,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="email" name="email" value="{{ old('email', auth('admin')->user()->email ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                            placeholder="admin@example.com" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
@@ -81,7 +81,7 @@
                             </label>
                             <div class="relative">
                                 <input type="text" name="phone" value="{{ old('phone', auth('admin')->user()->phone ?? '') }}" 
-                                       class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                       class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                        placeholder="+62 812-3456-7890">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
@@ -90,9 +90,10 @@
                         </div>
                         
                         <div class="flex justify-end pt-4">
-                            <button type="submit" class="rounded-xl bg-orange-600 hover:bg-orange-700 px-8 py-3 font-semibold text-white transition-colors duration-200">
-                                <span class="flex items-center space-x-2">
-                                    <i data-lucide="save" class="w-5 h-5"></i>
+                            <button type="submit" class="relative group py-2.5 px-6 text-sm font-medium text-white rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-sm shadow-orange-200/50 hover:shadow-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500/50 transition-all duration-200 transform hover:-translate-y-0.5">
+                                <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                                <span class="relative flex items-center justify-center space-x-2">
+                                    <i data-lucide="save" class="w-4 h-4"></i>
                                     <span>Simpan Profil</span>
                                 </span>
                             </button>
@@ -131,13 +132,13 @@
                             </label>
                             <div class="relative">
                                 <input :type="showPasswords ? 'text' : 'password'" name="current_password" 
-                                       class="w-full pl-12 pr-12 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                       class="w-full pl-12 pr-12 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                        placeholder="Masukkan password saat ini" required>
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="key" class="w-4 h-4 text-gray-400"></i>
                                 </div>
-                                <button type="button" @click="showPasswords = !showPasswords" class="absolute inset-y-0 right-0 pr-4 flex items-center">
-                                    <i :data-lucide="showPasswords ? 'eye-off' : 'eye'" class="w-4 h-4 text-gray-400 hover:text-gray-600"></i>
+                                <button type="button" @click="showPasswords = !showPasswords" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                                    <i :data-lucide="showPasswords ? 'eye-off' : 'eye'" class="w-4 h-4"></i>
                                 </button>
                             </div>
                         </div>
@@ -150,7 +151,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                            placeholder="Password baru" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
@@ -165,7 +166,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password_confirmation" 
-                                           class="w-full pl-12 pr-4 py-3 bg-white/70 backdrop-blur-sm border border-transparent rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-300 transition-all duration-200 hover:border-orange-300/50 placeholder-gray-400" 
                                            placeholder="Konfirmasi password" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="shield" class="w-4 h-4 text-gray-400"></i>
@@ -196,19 +197,6 @@
                                             <span>Mengandung angka dan simbol</span>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-end pt-4">
-                            <button type="submit" class="rounded-xl bg-orange-600 hover:bg-orange-700 px-8 py-3 font-semibold text-white transition-colors duration-200">
-                                <span class="flex items-center space-x-2">
-                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
-                                    <span>Update Password</span>
-                                </span>
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
             
