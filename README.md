@@ -1,8 +1,8 @@
-# 📦 Laraventory - Smart Inventory Management System
+# Laraventory - Smart Inventory Management System
 
-**Laraventory** adalah sistem manajemen inventori modern berbasis web untuk mengelola stok suku cadang alat rumah tangga seperti AC, kulkas, mesin cuci, TV, dan kompor. Dibangun dengan Laravel 12.x dan frontend CDN-only (tanpa Node/NPM, tanpa Vite) untuk kemudahan deployment dan maintenance.
+**Laraventory** adalah sistem manajemen inventori modern berbasis web untuk mengelola stok suku cadang alat rumah tangga seperti AC, kulkas, mesin cuci, TV, dan kompor. Dibangun dengan Laravel 12.x dan pendekatan frontend CDN-first (tanpa build step). Tersedia setup opsional Vite/Tailwind untuk pengembangan lokal, namun tidak wajib untuk menjalankan aplikasi.
 
-## ✨ Key Features (MVP)
+## Key Features (MVP)
 
 - **Products Management**
   - CRUD Products with Eloquent (name, SKU, category, supplier, price, cost, stock, min_stock, description, image path)
@@ -32,14 +32,14 @@
 - **Public Landing Page**
   - Simple landing page (no authentication) using Tailwind CDN
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Backend:** Laravel 12.x (PHP 8.1+)
-- **Frontend:** Blade + Tailwind CSS (PlayCDN) + (optional) Alpine.js (PlayCDN)
+- **Backend:** Laravel 12.x (PHP 8.2+)
+- **Frontend:** Blade + Tailwind CSS (PlayCDN) + Alpine.js (PlayCDN)
 - **Database:** MySQL
-- **Build Tools:** None. No Vite, no Node/NPM. Fully CDN-based frontend.
+- **Build Tools:** Tidak diperlukan untuk menjalankan aplikasi (CDN-first). Opsional untuk dev lokal: Vite + Tailwind CSS 4.
 
-## 📦 Installation
+## Installation
 
 1) Clone and enter the project
 
@@ -95,13 +95,30 @@ php artisan serve
 - Public: http://localhost:8000
 - Admin: http://localhost:8000/admin/login
 
-## 🔐 Default Account
+### (Opsional) Pengembangan Aset Lokal dengan Vite
+
+> Catatan: Bagian ini tidak wajib. Seluruh UI sudah berjalan via CDN. Gunakan hanya jika Anda ingin kustomisasi Tailwind/JS secara lokal.
+
+```bash
+# Pastikan Node.js terpasang
+npm install
+
+# Jalankan Vite dev server (opsional)
+npm run dev
+
+# Build aset produksi (opsional)
+npm run build
+```
+
+Konfigurasi terkait tersedia di `package.json` dan `vite.config.js`. Namun, layout Blade saat ini menggunakan PlayCDN sehingga aplikasi tetap berjalan tanpa proses build.
+
+## Default Account
 
 - **Admin**
   - Email: admin@example.com
   - Password: password
 
-## 🔎 Routes Overview
+## Routes Overview
 
 - **Public**
   - `GET /` → landing page (named `home`)
@@ -138,7 +155,7 @@ php artisan serve
   - `PUT /admin/profile` (update)
   - `PUT /admin/profile/password` (update password)
 
-## 📁 Database Schema (Migrations)
+## Database Schema (Migrations)
 
 - `admins` (auth for admin guard)
 - `categories` (name, description)
@@ -148,26 +165,27 @@ php artisan serve
 
 Seeders populate basic data for admins, categories, suppliers, products, and a few sample movements.
 
-## 🧭 Development Notes
+## Development Notes
 
-- No Vite / Node / NPM. Frontend assets use Tailwind and (optional) Alpine via PlayCDN only.
-- Admin layout and public layout are CDN-based, no build step required.
+- CDN-first: aplikasi berjalan tanpa Vite/Node/NPM. Frontend assets menggunakan Tailwind dan Alpine via PlayCDN.
+- Opsi dev lokal: Vite + Tailwind 4 tersedia untuk kustomisasi aset (lihat bagian opsional di atas).
+- Admin layout dan public layout berbasis CDN, tidak butuh build step untuk runtime.
 - Some endpoints such as reports export are placeholders for future enhancement.
 - Image upload requires `php artisan storage:link` and writable `storage/`.
 
-## 🎨 UI/UX Features
+## UI/UX Features
 
-- **Modern Design**: Glassmorphism effects dengan ocean-mint color scheme
+- **Modern Design**: Glassmorphism effects dengan tema oranye yang konsisten (selaras dengan komponen di `resources/views/layouts/public.blade.php` dan `resources/views/layouts/admin.blade.php`)
 - **Responsive Layout**: Mobile-first design yang optimal di semua device
 - **Interactive Elements**: Smooth animations dan hover effects
 - **Background Pattern**: Subtle grid pattern untuk visual enhancement
 - **Typography**: Hierarki yang jelas dengan Inter font family
 
-## ✅ Status
+## Status
 
-- ✅ MVP functional: admin login, products/categories/suppliers CRUD, inventory adjustments, dan basic reports
-- ✅ Modern UI/UX dengan design system yang konsisten
-- ✅ Responsive design untuk mobile dan desktop
-- ✅ Background pattern dan glassmorphism effects
-- 🔄 Export/import features (placeholder)
-- 📝 Please open issues atau PRs untuk improvements dan additional features
+- MVP functional: admin login, products/categories/suppliers CRUD, inventory adjustments, dan basic reports
+- Modern UI/UX dengan design system yang konsisten (tema oranye)
+- Responsive design untuk mobile dan desktop
+- Background pattern dan glassmorphism effects
+- Export/import features (placeholder)
+- Please open issues atau PRs untuk improvements dan additional features
