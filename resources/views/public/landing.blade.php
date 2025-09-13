@@ -77,7 +77,7 @@
     </section>
 
     <!-- Brands Section -->
-    <section id="brands" class="py-20 lg:py-32 bg-white">
+    <section id="brands" class="py-20 lg:py-32 bg-white/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16">
@@ -127,7 +127,7 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-20 lg:py-32 bg-white">
+    <section id="products" class="py-20 lg:py-32 bg-white/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -174,7 +174,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section class="py-24 lg:py-32 bg-white/20 relative overflow-hidden">
         <!-- Decorative Elements -->
         <div class="absolute inset-0">
             <div class="absolute top-0 left-1/4 w-72 h-72 bg-blue-50 rounded-full blur-3xl"></div>

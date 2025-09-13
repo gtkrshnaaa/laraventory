@@ -15,7 +15,30 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    
+    <style>
+        /* Simple tilt badge utility */
+        .tilt { transform: rotate(-8deg); }
+        .tilt-r { transform: rotate(8deg); }
+        
+        /* Background pattern kotak-kotak transparant */
+        body {
+             background-color: white;
+             background-image: 
+                 repeating-linear-gradient(0deg, rgba(14, 165, 233, 0.08) 0px, rgba(14, 165, 233, 0.08) 1px, transparent 1px, transparent 50px),
+                 repeating-linear-gradient(90deg, rgba(16, 185, 129, 0.06) 0px, rgba(16, 185, 129, 0.06) 1px, transparent 1px, transparent 50px),
+                 repeating-linear-gradient(45deg, rgba(6, 182, 212, 0.04) 0px, rgba(6, 182, 212, 0.04) 1px, transparent 1px, transparent 100px);
+         }
+         
+        /* Dark mode pattern override */
+        .dark body {
+          background-color: #0b0b0e;
+          background-image:
+            repeating-linear-gradient(0deg, rgba(14, 165, 233, 0.08) 0px, rgba(14, 165, 233, 0.08) 1px, transparent 1px, transparent 40px),
+            repeating-linear-gradient(90deg, rgba(16, 185, 129, 0.06) 0px, rgba(16, 185, 129, 0.06) 1px, transparent 1px, transparent 40px),
+            repeating-linear-gradient(45deg, rgba(14, 165, 233, 0.04) 0px, rgba(14, 165, 233, 0.04) 1px, transparent 1px, transparent 80px);
+        }
+      </style>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
