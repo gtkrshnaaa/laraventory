@@ -30,7 +30,7 @@
         <div class="mx-auto max-w-full">
             <!-- Summary Cards -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -87,7 +87,7 @@
                 </div>
             </div>
             
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl">
                 <div class="p-6 bg-white">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center space-x-3">
@@ -160,7 +160,7 @@
                                             <td class="px-6 py-5 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 h-10 w-10">
-                                                        <div class="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center border border-blue-200/50">
+                                                        <div class="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center border border-gray-200/50">
                                                         <i data-lucide="box" class="w-5 h-5 text-blue-600"></i>
                                                     </div>
                                                     </div>
@@ -186,17 +186,17 @@
                                             </td>
                                             <td class="px-6 py-5 whitespace-nowrap">
                                                 @if($p->stock <= 0)
-                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-100 text-blue-800 border border-blue-200/50">
+                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-100 text-blue-800 border border-gray-200/50">
                                                         <i data-lucide="x-circle" class="w-3 h-3 mr-1"></i>
                                                         Habis
                                                     </span>
                                                 @elseif($p->stock <= ($p->min_stock ?? 5))
-                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-100 text-blue-800 border border-blue-200/50">
+                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-100 text-blue-800 border border-gray-200/50">
                                                         <i data-lucide="alert-triangle" class="w-3 h-3 mr-1"></i>
                                                         Rendah
                                                     </span>
                                                 @else
-                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-50 text-blue-800 border border-blue-200/50">
+                                                    <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-xl bg-blue-50 text-blue-800 border border-gray-200/50">
                                                         <i data-lucide="check-circle" class="w-3 h-3 mr-1"></i>
                                                         Aman
                                                     </span>

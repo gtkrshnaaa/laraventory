@@ -158,7 +158,7 @@
             <div class="p-6 max-w-full">
                 <!-- Flash messages -->
                 @if (session('status'))
-                    <div class="mb-6 rounded-xl bg-blue-50 border border-blue-200 p-4">
+                    <div class="mb-6 rounded-xl bg-blue-50 border border-gray-200 p-4">
                         <div class="flex items-center">
                             <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>
                             <span class="text-blue-800 font-medium">{{ session('status') }}</span>

@@ -21,7 +21,7 @@
 @section('content')
     <div class="py-6">
         <div class="mx-auto max-w-full">
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl">
                 <div class="p-6 bg-white">
                     <div class="overflow-x-auto">
                         <div class="overflow-hidden border border-transparent rounded-2xl bg-white/60 backdrop-blur-sm">
@@ -60,7 +60,7 @@
                                             <td class="px-6 py-5 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 h-12 w-12">
-                                                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center border border-blue-200/50">
+                                                        <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center border border-gray-200/50">
                                                             <i data-lucide="building-2" class="w-6 h-6 text-blue-600"></i>
                                                         </div>
                                                     </div>
@@ -93,7 +93,7 @@
                                             </td>
                                             <td class="px-6 py-5 whitespace-nowrap text-right text-sm font-medium">
                                                 <div class="flex justify-end space-x-2">
-                                                    <a href="{{ route('admin.suppliers.edit', $supplier) }}" class="p-2 text-blue-600 hover:text-blue-800 bg-blue-50/30 hover:bg-blue-100/50 rounded-lg border border-blue-200/30 hover:border-blue-300/50 transition-all duration-200 transform hover:-translate-y-0.5" title="Edit">
+                                                    <a href="{{ route('admin.suppliers.edit', $supplier) }}" class="p-2 text-blue-600 hover:text-blue-800 bg-blue-50/30 hover:bg-blue-100/50 rounded-lg border border-gray-200/30 hover:border-gray-300/50 transition-all duration-200 transform hover:-translate-y-0.5" title="Edit">
                                                         <i data-lucide="edit" class="w-4 h-4"></i>
                                                     </a>
                                                     <form action="{{ route('admin.suppliers.destroy', $supplier) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus supplier ini?')">

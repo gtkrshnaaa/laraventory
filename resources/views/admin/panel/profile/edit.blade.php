@@ -20,7 +20,7 @@
     <div class="py-6">
         <div class="mx-auto max-w-full">
             <!-- Profile Info Card -->
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl mb-8">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl mb-8">
                 <div class="p-8 bg-white">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center space-x-4">
@@ -50,7 +50,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="text" name="name" value="{{ old('name', auth('admin')->user()->name ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                            placeholder="Masukkan nama lengkap" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
@@ -65,7 +65,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="email" name="email" value="{{ old('email', auth('admin')->user()->email ?? '') }}" 
-                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                            placeholder="admin@example.com" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
@@ -81,7 +81,7 @@
                             </label>
                             <div class="relative">
                                 <input type="text" name="phone" value="{{ old('phone', auth('admin')->user()->phone ?? '') }}" 
-                                       class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                       class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                        placeholder="+62 812-3456-7890">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
@@ -103,7 +103,7 @@
             </div>
 
             <!-- Security Settings Card -->
-            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl">
+            <div class="overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl">
                 <div class="p-8 bg-white">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center space-x-4">
@@ -132,7 +132,7 @@
                             </label>
                             <div class="relative">
                                 <input :type="showPasswords ? 'text' : 'password'" name="current_password" 
-                                       class="w-full pl-12 pr-12 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                       class="w-full pl-12 pr-12 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                        placeholder="Masukkan password saat ini" required>
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <i data-lucide="key" class="w-4 h-4 text-gray-400"></i>
@@ -151,7 +151,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password" 
-                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                            placeholder="Password baru" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="lock" class="w-4 h-4 text-gray-400"></i>
@@ -166,7 +166,7 @@
                                 </label>
                                 <div class="relative">
                                     <input :type="showPasswords ? 'text' : 'password'" name="password_confirmation" 
-                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-300 transition-all duration-200 hover:border-blue-300/50 placeholder-gray-400" 
+                                           class="w-full pl-12 pr-4 py-2.5 text-sm bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-gray-300 transition-all duration-200 hover:border-gray-300/50 placeholder-gray-400" 
                                            placeholder="Konfirmasi password" required>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="shield" class="w-4 h-4 text-gray-400"></i>
@@ -176,7 +176,7 @@
                         </div>
                         
                         <!-- Password Requirements -->
-                        <div class="bg-blue-50 backdrop-blur-sm border border-blue-200/50 rounded-xl p-4">
+                        <div class="bg-blue-50 backdrop-blur-sm border border-gray-200/50 rounded-xl p-4">
                             <div class="flex items-start space-x-3">
                                 <div class="flex-shrink-0">
                                     <i data-lucide="info" class="w-5 h-5 text-blue-600"></i>
@@ -202,7 +202,7 @@
             
             <!-- Account Statistics -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -216,7 +216,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6">
+                <div class="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
