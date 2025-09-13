@@ -65,9 +65,9 @@
 
         <!-- Login Form -->
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-white/80 py-10 px-8 sm:rounded-xl sm:px-12 border border-gray-200/60">
+            <div class="bg-white/80 py-10 px-8 sm:rounded-xl sm:px-12 border-2 border-gray-200/60">
                 @if($errors->any())
-                    <div class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div class="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
                         <div class="flex items-start">
                             <i data-lucide="alert-circle" class="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0"></i>
                             <div>
@@ -95,7 +95,7 @@
                                 <i data-lucide="mail" class="w-5 h-5 text-blue-500"></i>
                             </div>
                             <input id="email" name="email" type="email" autocomplete="email" required 
-                                class="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-blue-100 transition-all duration-200 bg-white/50"
+                                class="block w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-blue-100 transition-all duration-200 bg-white/50"
                                 placeholder="admin@example.com"
                                 value="{{ old('email') }}"
                                 autofocus>
@@ -112,7 +112,7 @@
                                 <i data-lucide="lock" class="w-5 h-5 text-blue-400"></i>
                             </div>
                             <input id="password" name="password" :type="showPassword ? 'text' : 'password'" autocomplete="current-password" required 
-                                class="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-blue-100 transition-all duration-200 bg-white/50"
+                                class="block w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-blue-100 transition-all duration-200 bg-white/50"
                                 placeholder="••••••••">
                             <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-500 hover:text-blue-700 transition-colors duration-200">
                                 <i data-lucide="eye" class="w-5 h-5" x-show="!showPassword"></i>
@@ -159,7 +159,7 @@
 
         <!-- Demo Credentials -->
         <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-blue-50 rounded-lg p-4 border border-gray-200/60" id="demoCard">
+            <div class="bg-blue-50 rounded-lg p-4 border-2 border-gray-200/60" id="demoCard">
                 <div class="flex items-center space-x-3">
                     <div class="w-9 h-9 bg-blue-500/10 rounded-lg flex items-center justify-center">
                         <i data-lucide="info" class="w-4 h-4 text-blue-500"></i>

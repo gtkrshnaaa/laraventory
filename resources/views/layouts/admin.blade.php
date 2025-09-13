@@ -71,7 +71,7 @@
                                 <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': open }"></i>
                             </button>
                             
-                            <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 mt-2 w-48 bg-white rounded-xl border border-transparent py-2" style="display: none;">
+                            <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 mt-2 w-48 bg-white rounded-xl border-2 border-transparent py-2" style="display: none;">
                                 <a href="{{ route('admin.profile.edit') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200">
                                     <i data-lucide="user" class="w-4 h-4 mr-3"></i>
                                     Profile
@@ -108,7 +108,7 @@
     <div class="flex flex-1 overflow-hidden">
         <!-- Sidebar -->
         <aside class="fixed inset-y-16 left-0 z-40 w-64 transform transition-transform duration-300 lg:relative lg:inset-y-0 lg:translate-x-0" :class="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }" x-show="sidebarOpen || window.innerWidth >= 1024" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
-            <div class="h-full bg-white/80 backdrop-blur-sm border border-transparent p-4">
+            <div class="h-full bg-white/80 backdrop-blur-sm border-2 border-transparent p-4">
                 <nav class="space-y-2">
                     @php
                         $menuItems = [
@@ -135,7 +135,7 @@
 
                 <!-- Sidebar footer -->
                 <div class="absolute bottom-4 left-4 right-4">
-                    <div class="bg-white rounded-xl p-4 border border-transparent">
+                    <div class="bg-white rounded-xl p-4 border-2 border-transparent">
                         <div class="flex items-center space-x-3">
                             <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
                                 <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
@@ -158,7 +158,7 @@
             <div class="p-6 max-w-full">
                 <!-- Flash messages -->
                 @if (session('status'))
-                    <div class="mb-6 rounded-xl bg-blue-50 border border-gray-200 p-4">
+                    <div class="mb-6 rounded-xl bg-blue-50 border-2 border-gray-200 p-4">
                         <div class="flex items-center">
                             <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>
                             <span class="text-blue-800 font-medium">{{ session('status') }}</span>
@@ -167,7 +167,7 @@
                 @endif
                 
                 @if ($errors->any())
-                    <div class="mb-6 rounded-xl bg-red-50 border border-red-200 p-4">
+                    <div class="mb-6 rounded-xl bg-red-50 border-2 border-red-200 p-4">
                         <div class="flex items-start">
                             <i data-lucide="alert-circle" class="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0"></i>
                             <div>

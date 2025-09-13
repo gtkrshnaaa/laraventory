@@ -16,7 +16,7 @@
                     <span>Export Data</span>
                 </span>
             </button>
-            <button class="p-2 rounded-xl text-blue-600 hover:text-blue-700 bg-white/80 hover:bg-blue-50 border border-gray-200/50 hover:border-gray-300/50 transition-all duration-200 transform hover:-translate-y-0.5">
+            <button class="p-2 rounded-xl text-blue-600 hover:text-blue-700 bg-white/80 hover:bg-blue-50 border-2 border-gray-200/50 hover:border-gray-300/50 transition-all duration-200 transform hover:-translate-y-0.5">
                 <i data-lucide="refresh-cw" class="w-5 h-5"></i>
             </button>
         </div>
@@ -28,7 +28,7 @@
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <!-- Total Produk -->
         <div class="group relative">
-            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-gray-600 mb-1">Total Produk</p>
@@ -57,7 +57,7 @@
 
         <!-- Total Stok -->
         <div class="group relative">
-            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-gray-600 mb-1">Total Stok</p>
@@ -86,7 +86,7 @@
 
         <!-- Total Kategori -->
         <div class="group relative">
-            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-gray-600 mb-1">Kategori</p>
@@ -114,7 +114,7 @@
 
         <!-- Total Supplier -->
         <div class="group relative">
-            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-sm font-medium text-gray-600 mb-1">Supplier</p>
@@ -146,21 +146,21 @@
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-8">
         <!-- Chart -->
         <div class="lg:col-span-2">
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50">
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Ringkasan Stok</h3>
                         <p class="text-sm text-gray-600">Tren pergerakan stok 30 hari terakhir</p>
                     </div>
                     <div class="relative">
-                        <select class="block w-full pl-3 pr-10 py-2 text-sm border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded-xl bg-white/50 backdrop-blur-sm">
+                        <select class="block w-full pl-3 pr-10 py-2 text-sm border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded-xl bg-white/50 backdrop-blur-sm">
                             <option>30 Hari Terakhir</option>
                             <option>3 Bulan Terakhir</option>
                             <option>Tahun Ini</option>
                         </select>
                     </div>
                 </div>
-                <div class="h-80 bg-blue-50/30 rounded-xl flex items-center justify-center border border-gray-100/50">
+                <div class="h-80 bg-blue-50/30 rounded-xl flex items-center justify-center border-2 border-gray-100/50">
                     <div class="text-center">
                         <i data-lucide="bar-chart-3" class="w-16 h-16 text-blue-400 mx-auto mb-4"></i>
                         <p class="text-gray-600 font-medium">Grafik Analytics</p>
@@ -172,7 +172,7 @@
 
         <!-- Recent Activities -->
         <div>
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50">
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Aktivitas Terbaru</h3>
@@ -226,7 +226,7 @@
     </div>
 
     <!-- Low Stock Products -->
-    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
+    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-200/50">
         <div class="flex items-center justify-between mb-6">
             <div>
                 <h3 class="text-xl font-bold text-gray-900">Produk Stok Sedikit</h3>
@@ -244,7 +244,7 @@
         @if(count($low_stock_products ?? []) > 0)
             <div class="space-y-3">
                 @foreach($low_stock_products as $product)
-                    <div class="flex items-center justify-between p-4 bg-blue-50/50 rounded-xl border border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
+                    <div class="flex items-center justify-between p-4 bg-blue-50/50 rounded-xl border-2 border-gray-200/50 hover:border-gray-300/50 transition-colors duration-200">
                         <div class="flex items-center space-x-4">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="alert-triangle" class="w-6 h-6 text-white"></i>
@@ -275,7 +275,7 @@
                 @endforeach
             </div>
         @else
-            <div class="text-center py-12 bg-blue-50/50 rounded-xl border border-gray-200/50">
+            <div class="text-center py-12 bg-blue-50/50 rounded-xl border-2 border-gray-200/50">
                 <i data-lucide="check-circle" class="w-16 h-16 text-blue-500 mx-auto mb-4"></i>
                 <p class="text-blue-800 font-semibold text-lg">Semua Stok Aman! 🎉</p>
                 <p class="text-blue-600 text-sm">Tidak ada produk dengan stok sedikit</p>

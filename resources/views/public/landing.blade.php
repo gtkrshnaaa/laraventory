@@ -11,7 +11,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
             <div class="text-center">
                 <!-- Badge -->
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-transparent mb-8">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border-2 border-transparent mb-8">
                     <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                     <span class="text-sm font-medium text-blue-700">🏢 Distributor Terpercaya Sejak 1995</span>
                 </div>
@@ -112,7 +112,7 @@
 
                 @foreach($brands as $brand)
                     <div class="group cursor-pointer">
-                        <div class="relative bg-white rounded-2xl p-6 border border-transparent text-center">
+                        <div class="relative bg-white rounded-2xl p-6 border-2 border-transparent text-center">
                             <div class="relative">
                                 <div class="w-16 h-16 bg-gradient-to-r {{ $brand['color'] }} rounded-2xl flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="{{ $brand['logo'] }}" class="w-8 h-8 text-white"></i>
@@ -158,7 +158,7 @@
 
                 @foreach($categories as $category)
                     <div class="group cursor-pointer">
-                        <div class="relative bg-white rounded-2xl p-6 border border-transparent text-center">
+                        <div class="relative bg-white rounded-2xl p-6 border-2 border-transparent text-center">
                             <div class="relative">
                                 <div class="w-16 h-16 bg-gradient-to-r {{ $category['color'] }} rounded-2xl flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="{{ $category['icon'] }}" class="w-8 h-8 text-white"></i>
@@ -200,7 +200,7 @@
                 
                 <!-- For Buyers -->
                 <div class="group relative">
-                    <div class="relative bg-white border border-transparent rounded-3xl p-8 lg:p-12">
+                    <div class="relative bg-white border-2 border-transparent rounded-3xl p-8 lg:p-12">
                         <div class="flex items-center mb-6">
                             <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
                                 <i data-lucide="shopping-cart" class="w-8 h-8 text-white"></i>
@@ -225,7 +225,7 @@
                                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </a>
                             
-                            <a href="https://wa.me/6281234567890" class="w-full flex items-center justify-center space-x-3 bg-white border border-transparent text-blue-600 hover:text-blue-700 font-semibold py-4 px-8 rounded-2xl hover:bg-blue-50 transition-colors duration-200">
+                            <a href="https://wa.me/6281234567890" class="w-full flex items-center justify-center space-x-3 bg-white border-2 border-transparent text-blue-600 hover:text-blue-700 font-semibold py-4 px-8 rounded-2xl hover:bg-blue-50 transition-colors duration-200">
                                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                                 <span class="text-lg">Chat WhatsApp</span>
                             </a>
@@ -235,7 +235,7 @@
 
                 <!-- For Brand Partners -->
                 <div class="group relative">
-                    <div class="relative bg-white border border-transparent rounded-3xl p-8 lg:p-12">
+                    <div class="relative bg-white border-2 border-transparent rounded-3xl p-8 lg:p-12">
                         <div class="flex items-center mb-6">
                             <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
                                 <i data-lucide="handshake" class="w-8 h-8 text-white"></i>
@@ -260,7 +260,7 @@
                                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </a>
                             
-                            <a href="#" class="w-full flex items-center justify-center space-x-3 bg-white border border-transparent text-blue-600 hover:text-blue-700 font-semibold py-4 px-8 rounded-2xl hover:bg-blue-50 transition-colors duration-200">
+                            <a href="#" class="w-full flex items-center justify-center space-x-3 bg-white border-2 border-transparent text-blue-600 hover:text-blue-700 font-semibold py-4 px-8 rounded-2xl hover:bg-blue-50 transition-colors duration-200">
                                 <i data-lucide="file-text" class="w-5 h-5"></i>
                                 <span class="text-lg">Download Proposal</span>
                             </a>
