@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Masuk - {{ config('app.name', 'Laravel') }}</title>
+    <title>Masuk - Laraventory</title>
 
     <!-- Tailwind CSS via CDN (No Vite) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,46 +25,49 @@
     
     <style>
         [x-cloak] { display: none !important; }
+        
+        /* Custom checkbox styling */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            background-origin: border-box;
+            user-select: none;
+            flex-shrink: 0;
+            height: 1rem;
+            width: 1rem;
+            border-width: 1px;
+            border-radius: 0.25rem;
+        }
+        
+        input[type="checkbox"]:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+            background-color: #f97316;
+            border-color: #f97316;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
-<body class="h-full font-sans bg-white relative overflow-hidden" x-data="{ showPassword: false }">
+<body class="h-full font-sans bg-white relative" x-data="{ showPassword: false }">
     <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-100"></div>
 
     <div class="relative min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <!-- Logo -->
-            <div class="flex justify-center mb-8">
-                <a href="{{ route('home') }}" class="group flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="package" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <span class="text-3xl font-bold text-orange-700">
-                        {{ config('app.name') }}
-                    </span>
-                </a>
-            </div>
-
-            <!-- Welcome Text -->
-            <div class="text-center">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-3">
-                    Selamat Datang Kembali! 👋
-                </h2>
-                <p class="text-lg text-gray-600 mb-2">
-                    Masuk ke <span class="font-semibold text-orange-600">Admin Panel</span>
-                </p>
-                <p class="text-sm text-gray-500">
-                    Kelola inventori Anda dengan mudah dan efisien
-                </p>
-            </div>
+        <!-- Logo -->
+        <div class="sm:mx-auto sm:w-full sm:max-w-md text-center mb-10">
+            <h1 class="text-3xl font-bold text-orange-600">Laraventory</h1>
+            <p class="mt-2 text-sm text-gray-600">Smart Inventory Management System</p>
         </div>
 
         <!-- Login Form -->
-        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-white/80 backdrop-blur-sm py-10 px-6 sm:rounded-3xl sm:px-12 border border-transparent">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="bg-white/80 py-10 px-8 sm:rounded-xl sm:px-12 border border-orange-200/60">
                 @if($errors->any())
-                    <div class="mb-6 p-4 bg-red-50 border border-red-200 rounded-2xl">
+                    <div class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                         <div class="flex items-start">
                             <i data-lucide="alert-circle" class="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0"></i>
                             <div>
@@ -89,10 +92,10 @@
                         </label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <i data-lucide="mail" class="w-5 h-5 text-orange-400"></i>
+                                <i data-lucide="mail" class="w-5 h-5 text-orange-500"></i>
                             </div>
                             <input id="email" name="email" type="email" autocomplete="email" required 
-                                class="block w-full pl-12 pr-4 py-3 border border-transparent rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                                class="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-100 transition-all duration-200 bg-white/50"
                                 placeholder="admin@example.com"
                                 value="{{ old('email') }}"
                                 autofocus>
@@ -109,9 +112,9 @@
                                 <i data-lucide="lock" class="w-5 h-5 text-orange-400"></i>
                             </div>
                             <input id="password" name="password" :type="showPassword ? 'text' : 'password'" autocomplete="current-password" required 
-                                class="block w-full pl-12 pr-12 py-3 border border-transparent rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                                class="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-100 transition-all duration-200 bg-white/50"
                                 placeholder="••••••••">
-                            <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 pr-4 flex items-center text-orange-400 hover:text-orange-600 transition-colors duration-200">
+                            <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 pr-4 flex items-center text-orange-500 hover:text-orange-700 transition-colors duration-200">
                                 <i data-lucide="eye" class="w-5 h-5" x-show="!showPassword"></i>
                                 <i data-lucide="eye-off" class="w-5 h-5" x-show="showPassword" style="display: none;"></i>
                             </button>
@@ -122,16 +125,16 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <input id="remember" name="remember" type="checkbox" 
-                                class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-transparent rounded transition-colors duration-200"
+                                class="h-4 w-4 border-gray-300 rounded focus:ring-orange-200 text-orange-500 transition-all duration-200"
                                 {{ old('remember') ? 'checked' : '' }}>
-                            <label for="remember" class="ml-3 block text-sm font-medium text-gray-700">
-                                Ingat saya
+                            <label for="remember" class="ml-2 block text-sm text-gray-700">
+                                Ingat Saya
                             </label>
                         </div>
 
                         <div class="text-sm">
-                            <a href="#" class="font-semibold text-orange-600 hover:text-orange-500 transition-colors duration-200">
-                                Lupa password?
+                            <a href="#" class="text-sm font-medium text-orange-500 hover:text-orange-600 transition-all duration-200">
+                                Lupa Password?
                             </a>
                         </div>
                     </div>
@@ -148,54 +151,22 @@
                     </div>
                 </form>
 
-                <!-- Divider -->
-                <div class="mt-8">
-                    <div class="relative">
-                        <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-transparent"></div>
-                        </div>
-                        <div class="relative flex justify-center text-sm">
-                            <span class="px-4 bg-white/80 text-gray-500 font-medium">
-                                Atau masuk dengan
-                            </span>
-                        </div>
-                    </div>
+                
 
-                    <!-- Social Login -->
-                    <div class="mt-6 grid grid-cols-2 gap-3">
-                        <button class="w-full inline-flex justify-center items-center py-3 px-4 border border-transparent rounded-2xl bg-white/50 backdrop-blur-sm text-sm font-medium text-gray-700 hover:bg-white transition-colors duration-200">
-                            <i data-lucide="chrome" class="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform duration-200"></i>
-                            <span class="ml-2">Google</span>
-                        </button>
-                        <button class="w-full inline-flex justify-center items-center py-3 px-4 border border-transparent rounded-2xl bg-white/50 backdrop-blur-sm text-sm font-medium text-gray-700 hover:bg-white transition-colors duration-200">
-                            <i data-lucide="github" class="w-5 h-5 text-gray-900 group-hover:scale-110 transition-transform duration-200"></i>
-                            <span class="ml-2">GitHub</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="mt-8 text-center">
-                    <p class="text-xs text-gray-500">
-                        Butuh bantuan? 
-                        <a href="#" class="font-semibold text-orange-600 hover:text-orange-500 transition-colors duration-200">
-                            Hubungi Administrator
-                        </a>
-                    </p>
-                </div>
+                
             </div>
         </div>
 
         <!-- Demo Credentials -->
         <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-orange-50 rounded-2xl p-4 border border-orange-200/50" id="demoCard">
+            <div class="bg-orange-50 rounded-lg p-4 border border-orange-200/60" id="demoCard">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center">
-                        <i data-lucide="info" class="w-5 h-5 text-white"></i>
+                    <div class="w-9 h-9 bg-orange-500/10 rounded-lg flex items-center justify-center">
+                        <i data-lucide="info" class="w-4 h-4 text-orange-500"></i>
                     </div>
                     <div>
-                        <div class="text-sm font-semibold text-gray-900">Demo Credentials</div>
-                        <div class="text-xs text-gray-600">Email: admin@example.com | Password: password</div>
+                        <div class="text-sm font-medium text-gray-800">Demo Credentials</div>
+                        <div class="text-xs text-gray-500 mt-0.5">Email: admin@example.com | Password: password</div>
                     </div>
                 </div>
             </div>
