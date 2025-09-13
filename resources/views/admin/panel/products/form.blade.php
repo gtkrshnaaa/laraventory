@@ -28,7 +28,7 @@
     @csrf
     @method($method)
     
-    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md">
+    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
         <div class="p-6 bg-white/50 border-b border-orange-200/30">
             <h3 class="text-lg font-semibold text-gray-900 flex items-center">
                 <i data-lucide="package" class="w-5 h-5 mr-2 text-orange-600"></i>
@@ -163,7 +163,7 @@
         </div>
     </div>
 
-    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md">
+    <div class="bg-white/80 backdrop-blur-sm border border-orange-200/50 rounded-2xl overflow-hidden">
         <div class="p-6 bg-white/50 border-b border-orange-200/30">
             <h3 class="text-lg font-semibold text-gray-900 flex items-center">
                 <i data-lucide="image" class="w-5 h-5 mr-2 text-orange-600"></i>
