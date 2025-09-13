@@ -1,3 +1,7 @@
+Written in Indonesian
+
+---
+
 # Laraventory - Smart Inventory Management System
 
 **Laraventory** adalah sistem manajemen inventori modern berbasis web untuk mengelola stok suku cadang alat rumah tangga seperti AC, kulkas, mesin cuci, TV, dan kompor. Dibangun dengan Laravel 12.x dan pendekatan frontend CDN-first (tanpa build step). Tersedia setup opsional Vite/Tailwind untuk pengembangan lokal, namun tidak wajib untuk menjalankan aplikasi.
