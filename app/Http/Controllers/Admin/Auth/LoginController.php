@@ -84,7 +84,7 @@ class LoginController extends Controller
     /**
      * Log the user out of the application.
      */
-    public function logout(Request $request): Response
+    public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
 
