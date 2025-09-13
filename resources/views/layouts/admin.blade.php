@@ -26,25 +26,25 @@
 <body class="min-h-screen flex flex-col font-sans bg-white" x-data="{ sidebarOpen: false, userMenuOpen: false }">
     <!-- Top navigation -->
     <nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/90 border-b border-transparent flex-shrink-0">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-full px-4">
             <div class="flex h-16 items-center justify-between">
                 <!-- Left side -->
                 <div class="flex items-center space-x-4">
                     <!-- Mobile menu button -->
-                    <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden p-2 rounded-xl text-orange-600 hover:bg-orange-50 transition-colors duration-200">
+                    <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden p-2 rounded-xl text-blue-600 hover:bg-blue-50 transition-colors duration-200">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                     
                     <!-- Logo -->
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-orange-600 rounded-xl flex items-center justify-center">
+                        <div class="w-8 h-8 bg-blue-600 rounded-xl flex items-center justify-center">
                             <i data-lucide="package" class="w-5 h-5 text-white"></i>
                         </div>
                         <div class="flex flex-col">
-                            <a href="{{ route('admin.dashboard') }}" class="font-bold text-lg text-orange-700">
+                            <a href="{{ route('admin.dashboard') }}" class="font-bold text-lg text-blue-700">
                                 Laraventory
                             </a>
-                            <span class="text-xs text-orange-500 font-medium">Admin Panel</span>
+                            <span class="text-xs text-blue-500 font-medium">Admin Panel</span>
                         </div>
                     </div>
                 </div>
@@ -53,15 +53,15 @@
                 <div class="flex items-center space-x-4">
                     @auth('admin')
                         <!-- Notifications -->
-                        <button class="relative p-2 rounded-xl text-orange-600 hover:bg-orange-50 transition-colors duration-200">
+                        <button class="relative p-2 rounded-xl text-blue-600 hover:bg-blue-50 transition-colors duration-200">
                             <i data-lucide="bell" class="w-6 h-6"></i>
                             <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                         </button>
                         
                         <!-- User menu -->
                         <div class="relative" x-data="{ open: false }">
-                            <button @click="open = !open" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-orange-50 transition-colors duration-200">
-                                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                            <button @click="open = !open" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-50 transition-colors duration-200">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                                     <span class="text-sm font-semibold text-white">{{ substr(auth('admin')->user()->name, 0, 1) }}</span>
                                 </div>
                                 <div class="hidden sm:block text-left">
@@ -72,11 +72,11 @@
                             </button>
                             
                             <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 mt-2 w-48 bg-white rounded-xl border border-transparent py-2" style="display: none;">
-                                <a href="{{ route('admin.profile.edit') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 transition-colors duration-200">
+                                <a href="{{ route('admin.profile.edit') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200">
                                     <i data-lucide="user" class="w-4 h-4 mr-3"></i>
                                     Profile
                                 </a>
-                                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 transition-colors duration-200">
+                                <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200">
                                     <i data-lucide="settings" class="w-4 h-4 mr-3"></i>
                                     Settings
                                 </a>
@@ -93,7 +93,7 @@
                     @endauth
 
                     @guest('admin')
-                        <a href="{{ route('admin.login') }}" class="rounded-xl bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-orange-700">
+                        <a href="{{ route('admin.login') }}" class="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-700">
                             <span class="relative z-10 flex items-center space-x-2">
                                 <i data-lucide="log-in" class="w-4 h-4"></i>
                                 <span>Login</span>
@@ -123,8 +123,8 @@
                     @endphp
 
                     @foreach($menuItems as $item)
-                        <a href="{{ route($item['route']) }}" class="group flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 {{ request()->routeIs($item['pattern']) ? 'bg-orange-600 text-white' : 'text-orange-700 hover:bg-orange-50 hover:text-orange-900' }}">
-                            <i data-lucide="{{ $item['icon'] }}" class="w-5 h-5 {{ request()->routeIs($item['pattern']) ? 'text-white' : 'text-orange-500 group-hover:text-orange-700' }}"></i>
+                        <a href="{{ route($item['route']) }}" class="group flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 {{ request()->routeIs($item['pattern']) ? 'bg-blue-600 text-white' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-900' }}">
+                            <i data-lucide="{{ $item['icon'] }}" class="w-5 h-5 {{ request()->routeIs($item['pattern']) ? 'text-white' : 'text-blue-500 group-hover:text-blue-700' }}"></i>
                             <span>{{ $item['label'] }}</span>
                             @if(request()->routeIs($item['pattern']))
                                 <div class="ml-auto w-2 h-2 bg-white rounded-full"></div>
@@ -137,7 +137,7 @@
                 <div class="absolute bottom-4 left-4 right-4">
                     <div class="bg-white rounded-xl p-4 border border-transparent">
                         <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center">
+                            <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
                                 <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
                             </div>
                             <div>
@@ -158,10 +158,10 @@
             <div class="p-6 max-w-full">
                 <!-- Flash messages -->
                 @if (session('status'))
-                    <div class="mb-6 rounded-xl bg-orange-50 border border-orange-200 p-4">
+                    <div class="mb-6 rounded-xl bg-blue-50 border border-blue-200 p-4">
                         <div class="flex items-center">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-500 mr-3"></i>
-                            <span class="text-orange-800 font-medium">{{ session('status') }}</span>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>
+                            <span class="text-blue-800 font-medium">{{ session('status') }}</span>
                         </div>
                     </div>
                 @endif
